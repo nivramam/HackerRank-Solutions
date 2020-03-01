@@ -1,0 +1,23 @@
+ int getSize(SinglyLinkedListNode *head)
+ {
+     int size=0;
+     SinglyLinkedListNode* temp=head;
+     while(temp!=NULL)
+     {
+         temp=temp->next;
+         size++;
+     }
+     cout<<size<<"is the length!\n";
+     return size;
+ }
+int getNode(SinglyLinkedListNode* head, int positionFromTail) {
+    int index=getSize(head)-positionFromTail-1;
+    int i=0;
+    SinglyLinkedListNode* move = head;
+    while(i<index)
+    {
+        move=move->next;
+        i++;
+    }
+    return move->data;
+}
